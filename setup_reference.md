@@ -1,0 +1,24 @@
+
+```
+oc create -f - <<EOF
+apiVersion: nmstate.io/v1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: br1-eth1-policy
+spec:
+  desiredState:
+    interfaces:
+      - name: br1
+        description: Linux bridge with eno2 as a port
+        type: linux-bridge
+        state: up
+        ipv4:
+          enabled: false
+        bridge:
+          options:
+            stp:
+              enabled: false
+          port:
+            - name: eno2
+EOF
+```
