@@ -4,7 +4,7 @@ oc create -f - <<EOF
 apiVersion: nmstate.io/v1
 kind: NodeNetworkConfigurationPolicy
 metadata:
-  name: br1-eth1-policy
+  name: br1-eno2-policy
 spec:
   desiredState:
     interfaces:
